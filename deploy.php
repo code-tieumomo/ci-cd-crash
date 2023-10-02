@@ -30,17 +30,17 @@ task('deploy:secrets', function () {
     upload('.env', get('deploy_path') . '/shared');
 });
 
-host('imta.io.vn')
-    ->setHostname('167.172.68.72')
+host('167.172.68.72')
+    // ->setHostname('imta.io.vn')
     // ->stage('production')
-    ->set('labels', ['stage' => 'production'])
+    ->set('stage', 'production')
     ->setRemoteUser('root')
     ->set('deploy_path', '/var/www/my-app');
 
-host('staging.imta.io.vn')
-    ->setHostname('167.172.68.72')
+host('167.172.68.72')
+    // ->setHostname('167.172.68.72')
     // ->stage('staging')
-    ->set('labels', ['stage' => 'staging'])
+    ->set('stage', 'staging')
     ->setRemoteUser('root')
     ->set('deploy_path', '/var/www/my-app-staging');
 
