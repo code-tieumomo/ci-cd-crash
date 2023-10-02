@@ -30,17 +30,23 @@ task('deploy:secrets', function () {
     upload('.env', get('deploy_path') . '/shared');
 });
 
-host('167.172.68.72')
-    // ->setHostname('imta.io.vn')
-    // ->stage('production')
+// host('167.172.68.72')
+//     // ->setHostname('imta.io.vn')
+//     // ->stage('production')
+//     ->set('labels', ['stage' => 'production'])
+//     ->setRemoteUser('root')
+//     ->set('deploy_path', '/var/www/my-app');
+host('imta.io.vn')
+    ->set('remote_user', 'root')
+    ->set('hostname', '167.172.68.72')
+    ->set('deploy_path', '/var/www/my-app')
     ->set('stage', 'production')
-    ->setRemoteUser('root')
-    ->set('deploy_path', '/var/www/my-app');
+    ->set('label', ['server_type' => 'production']);
 
-host('167.172.68.72')
+host('staging.imta.io.vn')
     // ->setHostname('167.172.68.72')
     // ->stage('staging')
-    ->set('stage', 'staging')
+    ->set('labels', ['stage' => 'staging'])
     ->setRemoteUser('root')
     ->set('deploy_path', '/var/www/my-app-staging');
 
