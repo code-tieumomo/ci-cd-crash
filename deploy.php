@@ -2,8 +2,8 @@
 
 namespace Deployer;
 
-require 'recipe/laravel.php';
-require 'recipe/rsync.php';
+require __DIR__ . '/vendor/deployer/deployer/recipe/laravel.php';
+require __DIR__ . '/vendor/deployer/recipes/recipe/rsync.php';
 
 set('application', 'Laravel');
 set('ssh_multiplexing', true);
@@ -31,16 +31,16 @@ task('deploy:secrets', function () {
 });
 
 host('imta.io.vn')
-  ->hostname('167.172.68.72')
-  ->stage('production')
-  ->user('root')
-  ->set('deploy_path', '/var/www/my-app');
+    ->hostname('167.172.68.72')
+    ->stage('production')
+    ->user('root')
+    ->set('deploy_path', '/var/www/my-app');
 
 host('staging.imta.io.vn')
-  ->hostname('167.172.68.72')
-  ->stage('staging')
-  ->user('root')
-  ->set('deploy_path', '/var/www/my-app-staging');
+    ->hostname('167.172.68.72')
+    ->stage('staging')
+    ->user('root')
+    ->set('deploy_path', '/var/www/my-app-staging');
 
 after('deploy:failed', 'deploy:unlock');
 
