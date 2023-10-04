@@ -3,6 +3,7 @@
 namespace Deployer;
 
 require __DIR__ . '/vendor/deployer/deployer/recipe/laravel.php';
+require __DIR__ . '/vendor/deployer/deployer/recipe/common.php';
 require __DIR__ . '/vendor/deployer/recipes/recipe/rsync.php';
 
 set('application', 'Laravel');
