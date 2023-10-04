@@ -41,7 +41,11 @@ host('imta.io.vn')
     ->set('hostname', '167.172.68.72')
     ->set('deploy_path', '/var/www/html/imta.io.vn')
     ->set('stage', 'production')
-    ->set('server_type', 'production');
+    ->set('server_type', 'production')
+    ->set('labels',  [
+        'type' => 'web',
+        'env' => 'prod',
+    ]);
 
 host('staging.imta.io.vn')
     // ->setHostname('167.172.68.72')
