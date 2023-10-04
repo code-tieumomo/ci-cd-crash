@@ -1,5 +1,6 @@
 <?php
 
+use App\Mail\OrderShipped;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    Mail::to('minhthao9968@gmail.com')->send(new OrderShipped());
 });

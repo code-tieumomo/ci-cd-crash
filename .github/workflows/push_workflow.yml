@@ -93,7 +93,7 @@ jobs:
       - name: Deploy to PRODUCTION Server
         env:
           DOT_ENV: ${{ secrets.DOT_ENV_PRODUCTION }}
-        run: dep deploy server_type=production --tag=${{ env.GITHUB_REF }} -vvv
+        run: vendor/bin/dep deploy server_type=production --tag=${{ env.GITHUB_REF }} -vvv
   deploy-staging:
     name: Deploy Project to STAGING Server
     runs-on: ubuntu-latest
