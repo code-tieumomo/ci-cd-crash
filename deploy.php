@@ -40,7 +40,7 @@ task('deploy:secrets', function () {
 host('imta.io.vn')
     ->set('remote_user', 'root')
     ->set('hostname', '167.172.68.72')
-    ->set('deploy_path', '/var/www/html/imta.io.vn')
+    ->set('deploy_path', '~/myapp')
     ->set('stage', 'production')
     ->set('server_type', 'production')
     ->set('labels',  [
