@@ -8,6 +8,7 @@ require __DIR__ . '/vendor/deployer/recipes/recipe/rsync.php';
 
 set('application', 'Laravel');
 set('ssh_multiplexing', true);
+set('repository', 'git@github.com:code-tieumomo/ci-cd-crash.git');
 
 set('rsync_src', function () {
     return __DIR__;
