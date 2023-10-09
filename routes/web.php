@@ -15,5 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    Mail::to('minhthao9968@gmail.com')->send(new OrderShipped());
+    Mail::to('code.tieumomo@gmail.com')->send(new OrderShipped());
+    // Mail::to('minhthao9968@gmail.com')->send(new OrderShipped());
 });

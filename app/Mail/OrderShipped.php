@@ -28,7 +28,8 @@ class OrderShipped extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address('bot@imtalabs.tech', 'IMTA Labs'),
+            // from: new Address('imtalabs@imtatech.com', 'IMTA Labs'),
+            // from: 'IMTA Labs',
             subject: 'Order Shipped',
         );
     }
