@@ -60,22 +60,23 @@ after('deploy:failed', 'deploy:unlock');
 
 desc('Deploy the application');
 
-// task('deploy', [
-//     'deploy:info',
-//     'deploy:prepare',
-//     'deploy:release',
-//     'rsync',
-//     'deploy:secrets',
-//     'deploy:shared',
-//     'deploy:vendors',
-//     'deploy:writable',
-//     'artisan:storage:link',
-//     'artisan:view:cache',
-//     'artisan:config:cache',
-//     'artisan:migrate',
-//     'artisan:queue:restart',
-//     'deploy:symlink',
-//     'deploy:unlock',
-//     'deploy:cleanup',
-// ]);
-task('deploy');
+task('deploy', [
+    'deploy:info',
+    'deploy:unlock',
+    'deploy:prepare',
+    'deploy:release',
+    'rsync',
+    'deploy:secrets',
+    'deploy:shared',
+    'deploy:vendors',
+    'deploy:writable',
+    'artisan:storage:link',
+    'artisan:view:cache',
+    'artisan:config:cache',
+    'artisan:migrate',
+    'artisan:queue:restart',
+    'deploy:symlink',
+    'deploy:unlock',
+    'deploy:cleanup',
+]);
+// task('deploy');
