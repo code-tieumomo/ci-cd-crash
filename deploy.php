@@ -63,7 +63,7 @@ desc('Deploy the application');
 task('deploy', [
     'deploy:info',
     'deploy:prepare',
-    'deploy:lock',
+    // 'deploy:lock',
     'deploy:release',
     'rsync',
     'deploy:secrets',
