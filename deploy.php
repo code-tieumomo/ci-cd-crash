@@ -2,9 +2,9 @@
 
 namespace Deployer;
 
-require __DIR__ . '/vendor/deployer/deployer/recipe/laravel.php';
-require __DIR__ . '/vendor/deployer/deployer/recipe/common.php';
-require __DIR__ . '/vendor/deployer/recipes/recipe/rsync.php';
+require __DIR__.'/vendor/deployer/deployer/recipe/laravel.php';
+require __DIR__.'/vendor/deployer/deployer/recipe/common.php';
+require __DIR__.'/vendor/deployer/recipes/recipe/rsync.php';
 
 set('application', 'Laravel');
 set('ssh_multiplexing', true);
@@ -13,7 +13,6 @@ set('repository', 'git@github.com:code-tieumomo/ci-cd-crash.git');
 set('rsync_src', function () {
     return __DIR__;
 });
-
 
 add('rsync', [
     'exclude' => [
@@ -28,8 +27,8 @@ add('rsync', [
 ]);
 
 task('deploy:secrets', function () {
-    file_put_contents(__DIR__ . '/.env', getenv('DOT_ENV'));
-    upload('.env', get('deploy_path') . '/shared');
+    file_put_contents(__DIR__.'/.env', getenv('DOT_ENV'));
+    upload('.env', get('deploy_path').'/shared');
 });
 
 // host('167.172.68.72')
@@ -44,7 +43,7 @@ host('imta.io.vn')
     ->set('deploy_path', '~/myapp')
     ->set('stage', 'production')
     ->set('server_type', 'production')
-    ->set('labels',  [
+    ->set('labels', [
         'type' => 'web',
         'env' => 'prod',
     ]);
@@ -81,4 +80,3 @@ desc('Deploy the application');
 // ]);
 task('deploy:unlock');
 task('deploy');
-
