@@ -2,6 +2,7 @@
 
 use App\Mail\OrderShipped;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    Mail::to('code.tieumomo@gmail.com')->send(new OrderShipped());
+    // Mail::to('code.tieumomo@gmail.com')->send(new OrderShipped());
     // Mail::to('minhthao9968@gmail.com')->send(new OrderShipped());
 });
